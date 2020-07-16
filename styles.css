@@ -1,0 +1,26 @@
+#container {
+    height: 380px;
+    width: 290px;
+    background-color: #85929e;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 10px;
+}
+#screen {
+    height: 80px;
+    width: 260px;
+    background-color: #fdfefe;
+    margin: 20px;
+    line-height: 80px;
+    text-align: right;
+    border-radius: 10px;
+}
+.button {
+    height: 50px;
+    width: 50px;
+    margin: 3px;
+    font-size: 24px;
+    border-radius: 50%;
+}
