@@ -22,7 +22,13 @@ function multiply (x, y){
     return x * y; 
 }
 function divide (x, y){
-    return x / y;
+    let divisionResult = x / y;
+    if (divisionResult == Infinity) {
+        return "NO >:("
+    }
+    else {
+        return divisionResult;
+    } 
 }
 function operate (operator, x, y) {
     if (first == true) {
@@ -119,33 +125,54 @@ function dotPress () {
     document.getElementById(".").disabled = true;
 }
 function plusPress () {
-    finalNumber = operate(operator, lastNumber, currentNumber);
-    operator = "+";
-    displayNumber(finalNumber);
-    cleanUp();
+    if (currentNumber == undefined) {
+        operator = "+"
+        cleanUp();
+    } else {
+        finalNumber = operate(operator, lastNumber, currentNumber);
+        operator = "+";
+        displayNumber(finalNumber);
+        cleanUp();
+    }
 }
 function minusPress () {
-    finalNumber = operate(operator, lastNumber, currentNumber);
-    operator = "-";
-    displayNumber(finalNumber);
-    cleanUp();
+    if (currentNumber == undefined) {
+        operator = "-"
+        cleanUp();
+    } else {
+        finalNumber = operate(operator, lastNumber, currentNumber);
+        operator = "-";
+        displayNumber(finalNumber);
+        cleanUp();
+    }
 }
 function timesPress () {
-    finalNumber = operate(operator, lastNumber, currentNumber);
-    operator = "*";
-    displayNumber(finalNumber);
-    cleanUp();
+    if (currentNumber == undefined) {
+        operator = "*"
+        cleanUp();
+    } else {
+        finalNumber = operate(operator, lastNumber, currentNumber);
+        operator = "*";
+        displayNumber(finalNumber);
+        cleanUp();
+    }
 }
 function dividePress () {
-    finalNumber = operate(operator, lastNumber, currentNumber);
-    operator = "/";
-    displayNumber(finalNumber);
-    cleanUp();
+    if (currentNumber == undefined) {
+        operator = "/"
+        cleanUp();
+    } else {
+        finalNumber = operate(operator, lastNumber, currentNumber);
+        operator = "/";
+        displayNumber(finalNumber);
+        cleanUp();
+    }
 }
 function equalsPress () {
     finalNumber = operate(operator, lastNumber, currentNumber);
     displayNumber(finalNumber);
     cleanUp();
+    currentNumber = undefined;
 }
 function clearPress () {
     removeChildNodes(screen);
@@ -254,4 +281,4 @@ document.onkeydown = function(e) {
     : keyPressed = undefined;
 }
 
-//to do: fix division, decimal
+//to do: fix decimal
