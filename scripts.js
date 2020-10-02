@@ -186,7 +186,7 @@ function clearPress () {
 function backPress () {
     let array = [];
     let buildingNumber = currentNumber.toString();
-    for (i = 0; i < buildingNumber.length; i++) {
+    for (let i = 0; i < buildingNumber.length; i++) {
         array.push(buildingNumber.charAt(i));
     }
     if (array[array.length - 1] == ".") {
